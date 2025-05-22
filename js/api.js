@@ -5,7 +5,7 @@ async function callGeminiAPI(input, customKey) {
     return null;
   }
 
-  const prompt = `Giải bài toán hình học: "${input}". Trả về định dạng JSON: {result: chuỗi hoặc số, shape: loại hình (như "triangle", "circle", "rectangle"), params: {tọa độ hoặc thông số để vẽ trên canvas 300x300}}. Không trả về mã HTML, CSS, JavaScript hoặc bất kỳ mô tả văn bản nào ngoài JSON. Ví dụ cho tam giác: {result: "Diện tích: 6", shape: "triangle", params: {points: [{x: 100, y: 100}, {x: 200, y: 100}, {x: 150, y: 200}]}}`;
+  const prompt = `Giải bài toán hình học: "${input}". Trả về định dạng JSON: {result: chuỗi trả lời cho người dùng, html_css: mã HTML/CSS để vẽ hình trên khu vực 300x300 (dùng SVG hoặc canvas, không dùng hình ảnh ngoài), shape: loại hình (như "triangle", "circle", "rectangle")}. Không trả về bất kỳ mô tả văn bản, mã JavaScript, hoặc câu thừa nào ngoài JSON. Ví dụ: {result: "Diện tích: 6", html_css: "<svg width='300' height='300'><polygon points='100,100 200,100 150,200' fill='#00ff88'/></svg>", shape: "triangle"}`;
   
   try {
     const response = await fetch(GEMINI_API_URL, {
@@ -38,7 +38,7 @@ function cleanResponse(data) {
     return jsonMatch ? JSON.parse(jsonMatch[0]) : null;
   } catch (e) {
     showNotification('Dữ liệu không đúng định dạng.');
-    return null;
+    return null; 
   }
 }
 
