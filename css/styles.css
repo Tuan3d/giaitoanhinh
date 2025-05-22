@@ -1,0 +1,149 @@
+body {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00ff88;
+}
+
+#key-container {
+  margin-bottom: 20px;
+}
+
+#api-key, #input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+}
+
+#input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  background: #00ff88;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #00cc70;
+}
+
+#result {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#canvas {
+  border: 2px solid #00ff88;
+  background: #333;
+  border-radius: 5px;
+}
+
+#contact {
+  margin: 20px 0;
+}
+
+#contact p {
+  font-size: 18px;
+}
+
+#contact strong {
+  color: #00ff88;
+}
+
+#version {
+  font-size: 14px;
+  color: #888;
+  margin: 10px 0;
+}
+
+footer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.bubble-container {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #00ff88;
+  color: #000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+.notification.hidden {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  body::after {
+    content: 'Vui lòng sử dụng thiết bị di động để trải nghiệm tốt nhất.';
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #ff5555;
+  }
+}
