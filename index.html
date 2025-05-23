@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App giải toán hình</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0.0">
+</head>
+<body>
+  <div class="container">
+    <h1>App giải toán hình</h1>
+    <div id="key-container">
+      <input type="text" id="api-key" placeholder="Nhập key" required>
+      <button id="save-key">Lưu key</button>
+    </div>
+    <form id="geometryForm">
+      <textarea id="input" placeholder="Nhập bài toán hình học (e.g., Tính diện tích tam giác với cạnh 3, 4, 5)" required></textarea>
+      <button type="submit">Giải</button>
+    </form>
+    <div id="result"></div>
+    <div id="shape-container"></div>
+    <div id="contact">
+      <p>Số điện thoại Zalo, Tele: <strong>0375320855</strong></p>
+    </div>
+    <div id="version"></div>
+    <footer>
+      <p>© AnhTuan-Studio</p>
+    </footer>
+  </div>
+  <div class="bubble-container">
+    <a href="YOUR_ZALO_URL_HERE" target="_blank"><img src="assets/anhzalo.png" alt="Zalo" class="bubble"></a>
+    <img src="assets/anhtele.png" alt="Telegram" class="bubble" id="telegram-bubble">
+  </div>
+  <div id="notification" class="notification hidden"></div>
+  <script src="js/version.js?v=1.0.0"></script>
+  <script src="key.js?v=1.0.0"></script>
+  <script src="js/key-mapping.js?v=1.0.0"></script>
+  <script src="js/api.js?v=1.0.0"></script>
+  <script src="js/draw.js?v=1.0.0"></script>
+  <script src="js/main.js?v=1.0.0"></script>
+</body>
+</html>
